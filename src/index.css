@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #0EA5A4;
+    --primary-hover: #0D9488;
+    --primary-light: #CCFBF1;
+    --secondary: #1E3A8A;
+    --secondary-hover: #1E40AF;
+    --accent: #FBBF24;
+    --accent-hover: #F59E0B;
+    --background: #FFFFFF;
+    --background-alt: #F0FDFA;
+    --foreground: #0F172A;
+    --muted: #64748B;
+    --card: #FFFFFF;
+    --border: #E2E8F0;
+    --font-scale: 1rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: var(--font-scale);
+  }
+
+  /* High contrast mode */
+  html.high-contrast {
+    filter: contrast(125%);
+    --foreground: #000000;
+    --muted: #1E293B;
+    --border: #000000;
+  }
+
+  /* Accessible outline for keyboard navigation */
+  *:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0FDFA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #99F6E4;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0EA5A4;
+}
